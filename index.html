@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Based Water Quality Prediction</title>
+    <meta
+      name="description"
+      content="Student-friendly project: AI-Based Water Quality Prediction System with a clean, modern UI."
+    />
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="container nav-content">
+        <div class="brand">
+          <span class="brand-mark">AI</span>
+          <span class="brand-text">Water Quality</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#predict">Predict</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1 class="title">AI-Based Water Quality Prediction</h1>
+        <p class="subtitle">
+          A simple, student-friendly project that estimates water safety using
+          basic water parameters and AI-inspired logic.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#predict" id="get-started-btn"
+            >Get Started</a
+          >
+          <a class="btn btn-outline" href="#about">Learn More</a>
+        </div>
+        <div class="hero-art">
+          <div class="bubble b1"></div>
+          <div class="bubble b2"></div>
+          <div class="bubble b3"></div>
+          <div class="bubble b4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About the Project</h2>
+        <p class="section-lead">
+          This project demonstrates how AI-style decision rules can estimate
+          whether water is likely <strong>Safe</strong> or <strong>Unsafe</strong>
+          to drink based on measurable parameters.
+        </p>
+
+        <div class="cards">
+          <!-- Card: pH -->
+          <article class="card">
+            <h3>pH</h3>
+            <p>
+              pH measures how acidic or basic water is. Drinking water is
+              typically acceptable when pH is between <strong>6.5</strong> and
+              <strong>8.5</strong>.
+            </p>
+          </article>
+          <!-- Card: Turbidity -->
+          <article class="card">
+            <h3>Turbidity</h3>
+            <p>
+              Turbidity refers to how clear the water is. Lower values indicate
+              clearer water. A value below <strong>5 NTU</strong> is often used
+              as a guideline for safe drinking water.
+            </p>
+          </article>
+          <!-- Card: Hardness -->
+          <article class="card">
+            <h3>Hardness</h3>
+            <p>
+              Hardness is caused by dissolved minerals (like calcium and
+              magnesium). It affects taste and scaling but is less critical than
+              pH and turbidity for immediate potability.
+            </p>
+          </article>
+        </div>
+
+        <div class="info-card">
+          <h3>How AI is used</h3>
+          <p>
+            In a full AI solution, a trained Machine Learning model would learn
+            patterns from real water-quality datasets and make predictions. In
+            this demo, we use a simple rule-based logic that mimics a model’s
+            decision: if <strong>pH</strong> is between <strong>6.5–8.5</strong>
+            and <strong>turbidity &lt; 5</strong>, the water is considered
+            <em>Safe</em>; otherwise <em>Unsafe</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prediction Section -->
+    <section id="predict" class="section section-accent">
+      <div class="container">
+        <h2 class="section-title">Try the Predictor</h2>
+        <p class="section-lead">
+          Enter your measured values and click Predict.
+        </p>
+        <form class="predict-form" id="predict-form">
+          <!-- Beginner-friendly labels and inputs -->
+          <label for="ph">
+            pH
+            <input
+              type="number"
+              id="ph"
+              name="ph"
+              step="0.1"
+              placeholder="e.g., 7.2"
+              required
+              min="-1"
+              max="15"
+            />
+          </label>
+          <label for="turbidity">
+            Turbidity (NTU)
+            <input
+              type="number"
+              id="turbidity"
+              name="turbidity"
+              step="0.1"
+              placeholder="e.g., 3.5"
+              required
+              min="0"
+            />
+          </label>
+          <label for="hardness">
+            Hardness (mg/L as CaCO₃)
+            <input
+              type="number"
+              id="hardness"
+              name="hardness"
+              step="1"
+              placeholder="e.g., 180"
+              required
+              min="0"
+            />
+          </label>
+
+          <button type="submit" class="btn btn-primary" id="predict-btn">
+            Predict
+          </button>
+        </form>
+
+        <div id="result" class="result" aria-live="polite">
+          <!-- Prediction result appears here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">
+          Have questions or feedback? Reach out via your preferred channel.
+        </p>
+        <div class="contact-card">
+          <p>
+            This is a student project demonstrating core ideas in
+            <strong>Artificial Intelligence & Data Science</strong>. You can
+            extend it with a backend (e.g., <em>Flask</em>) and a real ML
+            model.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          Made by: <strong>Vaibhav Nikam</strong>, <strong>Manas Gurav</strong>, <strong>Prathmesh Mane</strong>, <strong>Muhafiz Husain</strong>, <strong>Shreya Mali</strong> • Course: <strong>AI & DS</strong>
+          • Project: <strong>AI-Based Water Quality Prediction System</strong>
+        </p>
+        <p class="small">© <span id="year"></span> All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
